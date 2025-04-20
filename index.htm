@@ -1,0 +1,82 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to PDF Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Image to PDF Converter</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <div class="drop-zone" id="dropZone">
+                <span class="drop-instructions">Drag & Drop Images Here</span>
+                <span class="or">or</span>
+                <input type="file" id="fileInput" accept="image/*" multiple>
+                <label for="fileInput" class="browse-btn">Browse Files</label>
+            </div>
+            <div class="file-list" id="fileList"></div>
+        </section>
+
+        <section class="options-section">
+            <div class="option-group">
+                <h3>PDF Options</h3>
+                <div class="option">
+                    <label>Page Spread:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="spread" value="single" checked> Single Page</label>
+                        <label><input type="radio" name="spread" value="double"> Double Page</label>
+                    </div>
+                </div>
+                
+                <div class="option">
+                    <label>Borders (px):</label>
+                    <div class="border-controls">
+                        <input type="number" id="topBorder" min="0" value="0" placeholder="Top">
+                        <input type="number" id="rightBorder" min="0" value="0" placeholder="Right">
+                        <input type="number" id="bottomBorder" min="0" value="0" placeholder="Bottom">
+                        <input type="number" id="leftBorder" min="0" value="0" placeholder="Left">
+                    </div>
+                </div>
+
+                <div class="option">
+                    <label>Border Color:</label>
+                    <input type="color" id="borderColor" value="#000000">
+                </div>
+
+                <div class="option">
+                    <label>Image Scaling:</label>
+                    <select id="scaling">
+                        <option value="fit">Fit to Page</option>
+                        <option value="original">Original Size</option>
+                        <option value="custom">Custom Scale</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <button id="convertBtn" class="convert-btn">Convert to PDF</button>
+        <div id="downloadSection" class="download-section hidden">
+            <a id="downloadLink" class="download-link">Download PDF</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Image to PDF Converter. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

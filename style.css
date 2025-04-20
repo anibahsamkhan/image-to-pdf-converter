@@ -1,0 +1,149 @@
+/* style.css */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f8f9fa;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+header {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.upload-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.drop-zone {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+.drop-zone.dragover {
+    border-color: var(--primary-color);
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+.browse-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.browse-btn:hover {
+    background-color: #357abd;
+}
+
+.file-list {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.options-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.option-group {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.border-controls {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.convert-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.convert-btn:hover {
+    background-color: #357abd;
+}
+
+.download-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.download-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .border-controls {
+        grid-template-columns: 1fr;
+    }
+    
+    .option {
+        flex-direction: column;
+    }
+}
